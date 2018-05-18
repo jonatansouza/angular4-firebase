@@ -1,0 +1,84 @@
+<nav class="navbar navbar-light bg-faded">
+  <div class="container">
+    <a class="navbar-brand" href="https://www.guiacodigo.com">
+      GuiaCódigo
+    </a>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="row justify-content-center">
+    <h1>Sistema de Login com Firebase</h1>
+  </div>
+  <div class="animated fadeIn row justify-content-center mb-3" *ngIf="(user | async)?.email">
+    <div class="media">
+      <img [src]="(user | async)?.photoURL" alt="" class="d-flex mr-3" width="60">
+      <div class="media-body">
+        <h5 class="mt-0">
+          {{ (user | async)?.displayName }}
+        </h5>
+        <p class="mt-0">
+          {{ (user | async)?.email }}
+        </p>
+        <button class="btn btn-info" (click)="logout()">
+          Sair</button>
+      </div>
+    </div>
+  </div>
+  <div class="row justify-content-center mb-2">
+    <button class="btn btn-block btn-outline-primary" (click)="loginFacebook()">Facebook</button>
+  </div>
+  <div class="row justify-content-center mb-2">
+    <button class="btn btn-block btn-outline-info" (click)="loginGithub()">Github</button>
+  </div>
+  <div class="row justify-content-center mb-2">
+    <button class="btn btn-block btn-outline-success" (click)="showLoginForm = !showLoginForm">Login com e-mail</button>
+  </div>
+  <div class="row justify-content-center mb-2">
+    <button class="btn btn-block btn-outline-warning" (click)="showRegisterForm = !showRegisterForm">Signup</button>
+  </div>
+  <div class="row justify-content-center mb-2" *ngIf="showLoginForm">
+    <div class="col-6">
+      <div class="form-group">
+        <label for="">Email</label>
+        <input [(ngModel)]="email" type="email" class="form-control" placeholder="email">
+      </div>
+      <div class="form-group">
+        <label for="">Senha</label>
+        <input type="password" [(ngModel)]="senha" class="form-control" placeholder="senha">
+      </div>
+      <div class="form-group">
+        <button class="btn btn-info btn-block" (click)="loginEmail()">
+          Entrar
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="row justify-content-center mb-2" *ngIf="showRegisterForm">
+    <div class="col-6">
+      <h4>SignUp</h4>
+      <div class="form-group">
+        <label for="">Nome</label>
+        <input [(ngModel)]="name" type="text" class="form-control" placeholder="Nome">
+      </div>
+      <div class="form-group">
+        <label for="">Email</label>
+        <input [(ngModel)]="email" type="email" class="form-control" placeholder="email">
+      </div>
+      <div class="form-group">
+        <label for="">Senha</label>
+        <input type="password" [(ngModel)]="senha" class="form-control" placeholder="senha">
+      </div>
+      <div class="form-group">
+          <label for="">Picture</label>
+          <input type="text" [(ngModel)]="urlImage" class="form-control" placeholder="Url picture">
+        </div>
+      <div class="form-group">
+        <button class="btn btn-info btn-block" (click)="signup()">
+          Entrar
+        </button>
+      </div>
+    </div>
+  </div>
+
+</div>
