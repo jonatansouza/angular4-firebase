@@ -1,15 +1,14 @@
-# Angular 4 com Bootstrap 4
+# Angular 4 | Bootstrap 4 | Fire
 
-Esse modelo foi desenvolvido como exemplo de uma aplicação inicial com Angular 4 + Bootstrap 4
+Esse modelo foi desenvolvido como exemplo do curso Udemy de uma aplicação inicial com Angular 4 + Bootstrap 4 + Firebase
 
 ## Autor
 
-O autor desse modelo é o Guilherme Ferreira do Guia Código
+Jonatan Gall
 
 ## Instalação
 
 ```js
-git clone https://github.com/guiferreira/Angular4-com-Bootstrap4.git
 
 npm install
 
